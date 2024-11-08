@@ -1,0 +1,45 @@
+﻿<Window x:Class="CustomButton.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CustomButton"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="back" Background="Black">
+        <Button x:Name="botoncito" Content="Boton" HorizontalAlignment="Left" Height="35" Margin="175,137,0,0" VerticalAlignment="Top" Width="130" Click="botoncito_Click" Background="White" d:IsLocked="True">
+            <Button.OpacityMask>
+                <SolidColorBrush Color="White" Opacity="1"/>
+            </Button.OpacityMask>
+        </Button>
+        <Button x:Name="button" HorizontalAlignment="Left" Height="74" Margin="151,119,0,0" VerticalAlignment="Top" Width="176" RenderTransformOrigin="0.5,0.5" Background="Black">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="Transparent" CornerRadius="50" BorderBrush="White" BorderThickness="5">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="Red"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.314"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+    </Grid>
+</Window>
