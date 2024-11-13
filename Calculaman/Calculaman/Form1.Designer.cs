@@ -29,48 +29,73 @@
         private void InitializeComponent()
         {
             label1 = new Label();
+            labelintro = new Label();
+            labelEx = new Label();
+            labelex1 = new Label();
             buttonStart = new Button();
-            label2 = new Label();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(169, 41);
+            label1.Location = new Point(137, 18);
             label1.Name = "label1";
             label1.Size = new Size(193, 50);
             label1.TabIndex = 0;
             label1.Text = "Math Quiz";
             // 
+            // labelintro
+            // 
+            labelintro.AutoSize = true;
+            labelintro.Location = new Point(117, 83);
+            labelintro.Name = "labelintro";
+            labelintro.Size = new Size(222, 15);
+            labelintro.TabIndex = 2;
+            labelintro.Text = "Press \"Start\" to begin with the Math Quiz";
+            labelintro.Click += label2_Click;
+            // 
+            // labelEx
+            // 
+            labelEx.AutoSize = true;
+            labelEx.Location = new Point(173, 118);
+            labelEx.Name = "labelEx";
+            labelEx.Size = new Size(138, 15);
+            labelEx.TabIndex = 3;
+            labelEx.Text = "- 4 Exercises to complete";
+            // 
+            // labelex1
+            // 
+            labelex1.AutoSize = true;
+            labelex1.Location = new Point(173, 148);
+            labelex1.Name = "labelex1";
+            labelex1.Size = new Size(86, 15);
+            labelex1.TabIndex = 4;
+            labelex1.Text = "- In 60 seconds";
+            // 
             // buttonStart
             // 
-            buttonStart.Location = new Point(210, 221);
+            buttonStart.Location = new Point(173, 191);
             buttonStart.Name = "buttonStart";
-            buttonStart.Size = new Size(98, 49);
-            buttonStart.TabIndex = 1;
+            buttonStart.Size = new Size(100, 52);
+            buttonStart.TabIndex = 5;
             buttonStart.Text = "Start";
             buttonStart.UseVisualStyleBackColor = true;
-            buttonStart.Click += button1_Click;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(227, 144);
-            label2.Name = "label2";
-            label2.Size = new Size(38, 15);
-            label2.TabIndex = 2;
-            label2.Text = "label2";
+            buttonStart.Click += buttonStart_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(529, 471);
-            Controls.Add(label2);
+            BackColor = SystemColors.ActiveCaption;
+            ClientSize = new Size(462, 323);
             Controls.Add(buttonStart);
+            Controls.Add(labelex1);
+            Controls.Add(labelEx);
+            Controls.Add(labelintro);
             Controls.Add(label1);
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CalculaMan";
             ResumeLayout(false);
             PerformLayout();
@@ -79,7 +104,9 @@
         #endregion
 
         private Label label1;
+        private Label labelintro;
+        private Label labelEx;
+        private Label labelex1;
         private Button buttonStart;
-        private Label label2;
     }
 }
