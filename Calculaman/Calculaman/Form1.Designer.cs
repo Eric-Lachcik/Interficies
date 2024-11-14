@@ -71,7 +71,8 @@
             labelex1.Name = "labelex1";
             labelex1.Size = new Size(86, 15);
             labelex1.TabIndex = 4;
-            labelex1.Text = "- In 60 seconds";
+            labelex1.Text = "- In 30 seconds";
+            labelex1.Click += labelex1_Click;
             // 
             // buttonStart
             // 

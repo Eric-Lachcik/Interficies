@@ -12,7 +12,7 @@ namespace Calculaman
 {
     public partial class Form2 : Form
     {
-        private int timeLeft = 60;
+        private int timeLeft = 30;
 
         Random randomizer = new Random();
 
@@ -45,9 +45,9 @@ namespace Calculaman
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick_1;
 
-            progressBarTimer.Maximum = 60;
+            progressBarTimer.Maximum = 30;
             progressBarTimer.Value = 0;
-            labelTimer.Text = "60";
+            labelTimer.Text = "30";
 
 
             timer1.Start();
@@ -119,7 +119,7 @@ namespace Calculaman
             if (timeLeft > 0)
             {
                 timeLeft--;
-                progressBarTimer.Value = 60 - timeLeft;
+                progressBarTimer.Value = 30 - timeLeft;
                 labelTimer.Text = timeLeft.ToString();
             }
             else

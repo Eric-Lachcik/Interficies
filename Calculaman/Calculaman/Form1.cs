@@ -16,8 +16,13 @@ namespace Calculaman
         {
             Form2 form2 = new Form2();
             form2.ShowDialog();
-            
+
             this.Hide();
+        }
+
+        private void labelex1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
