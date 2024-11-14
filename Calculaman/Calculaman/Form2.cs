@@ -55,44 +55,57 @@ namespace Calculaman
 
         private bool CheckTheAnswer()
         {
+            bool allCorrect = true;
+
             if (addend1 + addend2 == numericSum.Value)
             {
                 sumRes.Visible = true;
                 sumRes.ForeColor = Color.Green;
-                return true;
-
             }
-            else if (minuend - subtrahend == numericMin.Value)
+            else
+            {
+                sumRes.Visible = true;
+                sumRes.ForeColor = Color.Red;
+                allCorrect = false;
+            }
+
+            if (minuend - subtrahend == numericMin.Value)
             {
                 minRes.Visible = true;
-                sumRes.ForeColor = Color.Green;
-                return true;
+                minRes.ForeColor = Color.Green;
             }
-            else if (multiplicand * multiplier == numericPor.Value)
+            else
+            {
+                minRes.Visible = true;
+                minRes.ForeColor = Color.Red;
+                allCorrect = false;
+            }
+
+            if (multiplicand * multiplier == numericPor.Value)
             {
                 porRes.Visible = true;
-                sumRes.ForeColor = Color.Green;
-                return true;
+                porRes.ForeColor = Color.Green;
             }
-            else if (dividend / divisor == numericDiv.Value)
+            else
+            {
+                porRes.Visible = true;
+                porRes.ForeColor = Color.Red;
+                allCorrect = false;
+            }
+
+            if (dividend / divisor == numericDiv.Value)
             {
                 divRes.Visible = true;
-                sumRes.ForeColor = Color.Green;
-                return true;
+                divRes.ForeColor = Color.Green;
             }
             else
             {
                 divRes.Visible = true;
                 divRes.ForeColor = Color.Red;
-                sumRes.Visible = true;
-                sumRes.ForeColor = Color.Red;              
-                minRes.Visible = true;
-                minRes.ForeColor = Color.Red;
-                porRes.Visible = true;
-                porRes.ForeColor = Color.Red;
-
-                return false;
+                allCorrect = false;
             }
+
+            return allCorrect;
         }
 
         private void labelExer_Click(object sender, EventArgs e)
