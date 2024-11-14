@@ -75,7 +75,7 @@
             // 
             // buttonStart
             // 
-            buttonStart.Location = new Point(173, 191);
+            buttonStart.Location = new Point(182, 191);
             buttonStart.Name = "buttonStart";
             buttonStart.Size = new Size(100, 52);
             buttonStart.TabIndex = 5;
