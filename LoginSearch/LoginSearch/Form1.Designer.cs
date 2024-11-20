@@ -37,6 +37,7 @@
             subHeader = new Label();
             pictureBox1 = new PictureBox();
             label1 = new Label();
+            subHeaderLink = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -88,11 +89,11 @@
             // subHeader
             // 
             subHeader.AutoSize = true;
-            subHeader.Location = new Point(137, 135);
+            subHeader.Location = new Point(80, 135);
             subHeader.Name = "subHeader";
-            subHeader.Size = new Size(154, 15);
+            subHeader.Size = new Size(168, 15);
             subHeader.TabIndex = 6;
-            subHeader.Text = "Students Management Web";
+            subHeader.Text = "Students Management Web ⇉";
             // 
             // pictureBox1
             // 
@@ -102,6 +103,8 @@
             pictureBox1.Size = new Size(314, 120);
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click_1;
+            pictureBox1.DoubleClick += pictureBox1_Click_1;
             // 
             // label1
             // 
@@ -113,12 +116,24 @@
             label1.TabIndex = 8;
             label1.Text = "Iniciar Sesió";
             // 
+            // subHeaderLink
+            // 
+            subHeaderLink.AutoSize = true;
+            subHeaderLink.Location = new Point(249, 135);
+            subHeaderLink.Name = "subHeaderLink";
+            subHeaderLink.Size = new Size(73, 15);
+            subHeaderLink.TabIndex = 9;
+            subHeaderLink.TabStop = true;
+            subHeaderLink.Text = "www.cide.es";
+            subHeaderLink.LinkClicked += subHeaderLink_LinkClicked;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(437, 432);
+            Controls.Add(subHeaderLink);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             Controls.Add(subHeader);
@@ -146,5 +161,6 @@
         private Label subHeader;
         private PictureBox pictureBox1;
         private Label label1;
+        private LinkLabel subHeaderLink;
     }
 }

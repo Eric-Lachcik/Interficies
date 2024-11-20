@@ -1,3 +1,6 @@
+using System.Diagnostics;
+using System.Windows.Forms;
+
 namespace LoginSearch
 {
     public partial class Login : Form
@@ -36,6 +39,29 @@ namespace LoginSearch
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void subHeaderLink_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                VisitLink();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to open link that was clicked." + ex);
+            }
+        }
+
+        private void VisitLink()
+        {
+            subHeaderLink.LinkVisited = true;
+            Process.Start("http://www.microsoft.com");
         }
     }
 }
