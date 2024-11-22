@@ -8,12 +8,34 @@ namespace LoginSearch
         public Login()
         {
             InitializeComponent();
+            InitializeLinkLabel();
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
+
+            string usuari = usernameText.Text;
+            string contra = passwordText.Text;
             Search form2 = new Search();
-            form2.ShowDialog();
+            if (string.IsNullOrEmpty(usuari) && string.IsNullOrEmpty(contra))
+            {
+                MessageBox.Show("Tens que introduir l'usuari i contrasenya");
+            }
+            else if (string.IsNullOrEmpty(contra))
+            {
+                MessageBox.Show("Tens que introduir la contrasenya");
+            }
+            else if (string.IsNullOrEmpty(usuari))
+            {
+                MessageBox.Show("Tens que introduir l'usuari");
+            }
+            else
+            {
+                form2.ShowDialog();
+                passwordText.Clear();
+                usernameText.Clear();
+            }
+
         }
 
         private void username_Click(object sender, EventArgs e)
@@ -46,22 +68,33 @@ namespace LoginSearch
 
         }
 
-        private void subHeaderLink_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
+
+        private void InitializeLinkLabel()
         {
-            try
+            subHeaderLink.Text = "Visita Cide";
+            subHeaderLink.Links.Clear();
+            subHeaderLink.Links.Add(0, subHeaderLink.Text.Length, "www.cide.es");
+
+
+            subHeaderLink.LinkClicked -= subHeaderLink_LinkClicked;
+            subHeaderLink.LinkClicked += subHeaderLink_LinkClicked;
+        }
+
+        private void subHeaderLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (e.Link.LinkData is string url && !string.IsNullOrEmpty(url))
             {
-                VisitLink();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Unable to open link that was clicked." + ex);
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
             }
         }
 
-        private void VisitLink()
+        private void subHeader_Click(object sender, EventArgs e)
         {
-            subHeaderLink.LinkVisited = true;
-            Process.Start("http://www.microsoft.com");
+
         }
     }
 }

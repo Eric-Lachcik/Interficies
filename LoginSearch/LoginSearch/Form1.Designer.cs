@@ -38,6 +38,7 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             subHeaderLink = new LinkLabel();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -89,16 +90,17 @@
             // subHeader
             // 
             subHeader.AutoSize = true;
-            subHeader.Location = new Point(80, 135);
+            subHeader.Location = new Point(142, 135);
             subHeader.Name = "subHeader";
-            subHeader.Size = new Size(168, 15);
+            subHeader.Size = new Size(156, 15);
             subHeader.TabIndex = 6;
-            subHeader.Text = "Students Management Web ⇉";
+            subHeader.Text = "App de gestió de estudiants ";
+            subHeader.Click += subHeader_Click;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(60, 12);
+            pictureBox1.Location = new Point(67, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(314, 120);
             pictureBox1.TabIndex = 7;
@@ -110,7 +112,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(120, 164);
+            label1.Location = new Point(120, 166);
             label1.Name = "label1";
             label1.Size = new Size(202, 47);
             label1.TabIndex = 8;
@@ -119,7 +121,7 @@
             // subHeaderLink
             // 
             subHeaderLink.AutoSize = true;
-            subHeaderLink.Location = new Point(249, 135);
+            subHeaderLink.Location = new Point(38, 408);
             subHeaderLink.Name = "subHeaderLink";
             subHeaderLink.Size = new Size(73, 15);
             subHeaderLink.TabIndex = 9;
@@ -127,12 +129,22 @@
             subHeaderLink.Text = "www.cide.es";
             subHeaderLink.LinkClicked += subHeaderLink_LinkClicked;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(1, 393);
+            label2.Name = "label2";
+            label2.Size = new Size(157, 15);
+            label2.TabIndex = 10;
+            label2.Text = "Pagina Principal del Col·legi:";
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(437, 432);
+            Controls.Add(label2);
             Controls.Add(subHeaderLink);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
@@ -144,7 +156,7 @@
             Controls.Add(username);
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "www.cide/login.es";
+            Text = "cide/login";
             Load += Login_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -162,5 +174,6 @@
         private PictureBox pictureBox1;
         private Label label1;
         private LinkLabel subHeaderLink;
+        private Label label2;
     }
 }
