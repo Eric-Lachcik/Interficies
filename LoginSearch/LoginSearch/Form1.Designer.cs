@@ -79,12 +79,14 @@
             // 
             // buttonLogin
             // 
+            buttonLogin.BackColor = Color.ForestGreen;
+            buttonLogin.ForeColor = SystemColors.ButtonHighlight;
             buttonLogin.Location = new Point(349, 386);
             buttonLogin.Name = "buttonLogin";
             buttonLogin.Size = new Size(76, 34);
             buttonLogin.TabIndex = 4;
             buttonLogin.Text = "Accedir";
-            buttonLogin.UseVisualStyleBackColor = true;
+            buttonLogin.UseVisualStyleBackColor = false;
             buttonLogin.Click += buttonLogin_Click;
             // 
             // subHeader
